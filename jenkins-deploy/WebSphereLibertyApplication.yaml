@@ -7,7 +7,7 @@ spec:
   license:
     accept: true
     edition: IBM WebSphere Application Server
-    productEntitlementSource: Standalone
+    productEntitlementSource: IBM Cloud Pak for Applications Advanced
   expose: true
   resources: {}
   route:
