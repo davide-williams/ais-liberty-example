@@ -14,7 +14,7 @@ spec:
     termination: passthrough
   applicationImage: 'image-registry.openshift-image-registry.svc:5000/ais-liberty-support/test-liberty-app:1.0'
   service:
-    certificateSecretRef: ace-secret
+    certificateSecretRef: lib-demo-secret
     port: 9443
     type: ClusterIP
   manageTLS: true
