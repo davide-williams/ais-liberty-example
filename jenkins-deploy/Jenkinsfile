@@ -1,2 +1,30 @@
-ghsdsvx
- vcbvfdsfsgdd
+pipeline {
+
+   agent {
+      label 'OCPNonProd'
+   }
+   environment{
+      NAMESPACE = 'ais-liberty-support'
+      BUILD_NUMBER = "${env.BUILD_NUMBER}" 
+   }
+    stages {
+    
+   stage('Create QMGR') {
+       steps {
+         echo "Hello World"
+       }
+    }       
+  } 
+  post {
+         // Clean after build
+         always {
+            echo 'Cleaning up after build...'
+             cleanWs(cleanWhenNotBuilt: false,
+                     deleteDirs: true,
+                     disableDeferredWipeout: true,
+                     notFailBuild: true,
+                     patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
+                                [pattern: '.propsfile', type: 'EXCLUDE']])
+         }
+     }
+}
