@@ -1,4 +1,9 @@
 resources:
 - WebSphereLibertyApplication.yaml
+secretGenerator:  
+- name: lib-demo-secret
+  files:
+  - lib-demo.crt
+  - lib-demo.key
 generatorOptions:
   disableNameSuffixHash: true
