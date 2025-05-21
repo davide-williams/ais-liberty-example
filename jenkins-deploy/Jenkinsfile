@@ -1,7 +1,7 @@
 pipeline {
 
    agent {
-      label 'OCPNonProd'
+      label 'OCPNonProdAgent'
    }
    environment{
       NAMESPACE = 'ais-liberty-support'
