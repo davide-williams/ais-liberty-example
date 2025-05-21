@@ -7,17 +7,18 @@ pipeline {
    environment{
       NAMESPACE = 'ais-liberty-support'
       BUILD_NUMBER = "${env.BUILD_NUMBER}" 
+      APP_BUILD_PATH = "${WORKSPACE}/jenkins-deploy"
    }
     stages {
     
    stage('deploy liberty application') {
        steps {
          script {
-			sh "oc project ${NAMESPACE}"
-			echo "${WORKSPACE}"
-			//echo'--- kustomization.yaml'
-			//sh 'cat kustomization.yaml \n'
-            sh "oc kustomize ./"
+			  dir("${APP_BUILD_PATH}"){   				
+				echo'--- kustomization.yaml'
+				sh 'cat kustomization.yaml \n'
+            	sh "oc kustomize ./"
+            }
 		 }
        }
     }       
