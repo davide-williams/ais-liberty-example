@@ -17,7 +17,9 @@ pipeline {
 			  dir("${APP_BUILD_PATH}"){   				
 				echo'--- kustomization.yaml'
 				sh 'cat kustomization.yaml \n'
+				sh "oc project ${NAMESPACE}"
             	sh "oc kustomize ./"
+            	sh "oc apply -k ./"
             }
 		 }
        }
