@@ -3,7 +3,7 @@ resources:
 secretGenerator:  
 - name: lib-demo-secret
   files:
-  - lib-demo.crt
-  - lib-demo.key
+  - tls.crt
+  - tls.key
 generatorOptions:
   disableNameSuffixHash: true
