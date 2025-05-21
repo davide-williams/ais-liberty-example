@@ -14,8 +14,9 @@ pipeline {
        steps {
          script {
 			sh "oc project ${NAMESPACE}"
-			echo'--- kustomization.yaml'
-			sh 'cat kustomization.yaml \n'
+			echo "${APP_BUILD_PATH}"
+			//echo'--- kustomization.yaml'
+			//sh 'cat kustomization.yaml \n'
             sh "oc kustomize ./"
 		 }
        }
