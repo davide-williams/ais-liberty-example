@@ -1,0 +1,4 @@
+resources:
+- WebSphereLibertyApplication.yaml
+generatorOptions:
+  disableNameSuffixHash: true

@@ -10,9 +10,11 @@ pipeline {
    }
     stages {
     
-   stage('Create QMGR') {
+   stage('deploy liberty application') {
        steps {
-         echo "Hello World"
+         script {
+			sh "oc project ${NAMESPACE}"
+		 }
        }
     }       
   } 
