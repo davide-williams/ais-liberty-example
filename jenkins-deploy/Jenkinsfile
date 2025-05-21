@@ -3,6 +3,7 @@ pipeline {
    agent {
       label 'OCPNonProdAgent'
    }
+   
    environment{
       NAMESPACE = 'ais-liberty-support'
       BUILD_NUMBER = "${env.BUILD_NUMBER}" 
